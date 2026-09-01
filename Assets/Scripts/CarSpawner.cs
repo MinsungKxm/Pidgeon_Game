@@ -25,3 +25,4 @@ public class CarSpawner : MonoBehaviour {
         );
     }
 }
+

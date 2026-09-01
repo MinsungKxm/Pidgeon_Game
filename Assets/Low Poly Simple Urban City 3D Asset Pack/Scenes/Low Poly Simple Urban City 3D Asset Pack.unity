@@ -29572,6 +29572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_1_3
       objectReference: {fileID: 0}
+    - target: {fileID: 800097039903430001, guid: 8b8dfbf784f51fe488952ff9b6004d4a, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30069,6 +30073,10 @@ PrefabInstance:
     - target: {fileID: 8126737932816066456, guid: 475054c3ae438a14c87a575c9fa44ee7, type: 3}
       propertyPath: m_Name
       value: Main_Truck_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126737932816066456, guid: 475054c3ae438a14c87a575c9fa44ee7, type: 3}
+      propertyPath: m_TagString
+      value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 8902536447320522018, guid: 475054c3ae438a14c87a575c9fa44ee7, type: 3}
       propertyPath: m_RootOrder
@@ -31633,6 +31641,10 @@ PrefabInstance:
     - target: {fileID: 1412363122834768907, guid: c2950abe12173684f8fb76d8cd3ed1b3, type: 3}
       propertyPath: m_Name
       value: Police
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412363122834768907, guid: c2950abe12173684f8fb76d8cd3ed1b3, type: 3}
+      propertyPath: m_TagString
+      value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 1788606808321810097, guid: c2950abe12173684f8fb76d8cd3ed1b3, type: 3}
       propertyPath: m_RootOrder
@@ -33752,6 +33764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_2_3
       objectReference: {fileID: 0}
+    - target: {fileID: 2035264757950506384, guid: 88de85f09c1e22846aea38938bc9fabf, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35128,6 +35144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_3_3
       objectReference: {fileID: 0}
+    - target: {fileID: 4919208424876126901, guid: 435ae831f8edd784ebf701f5cfb58d60, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     - target: {fileID: 5696870267979687951, guid: 435ae831f8edd784ebf701f5cfb58d60, type: 3}
       propertyPath: m_RootOrder
       value: 72
@@ -35673,6 +35693,10 @@ PrefabInstance:
     - target: {fileID: 2102204373591914974, guid: c113180fba5d60d419f8e84af96f8306, type: 3}
       propertyPath: m_Name
       value: Taxi
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102204373591914974, guid: c113180fba5d60d419f8e84af96f8306, type: 3}
+      propertyPath: m_TagString
+      value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36615,6 +36639,10 @@ PrefabInstance:
     - target: {fileID: 4122504736164611588, guid: 9dce1e39a16300c449250e82a5c0de0e, type: 3}
       propertyPath: m_Name
       value: Car_3_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122504736164611588, guid: 9dce1e39a16300c449250e82a5c0de0e, type: 3}
+      propertyPath: m_TagString
+      value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
