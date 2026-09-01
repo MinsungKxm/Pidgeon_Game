@@ -20,12 +20,19 @@ public class PlayerController : MonoBehaviour {
     private Vector3 hopEndPosition;
     private float hopTimer = 0.0f;
 
+    public bool isDead = false;
+
+    public GameObject deathScreen;
     void Start() {
         MoveAction.Enable();
         targetRotation = transform.eulerAngles.y;
     }
 
     void Update() {
+
+        if (isDead)
+            return;
+
         moveInput = MoveAction.ReadValue<Vector2>();
 
         // W was just pressed
@@ -64,6 +71,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         previousInput = moveInput;
+
     }
 
     void StartHop() {
@@ -100,5 +108,18 @@ public class PlayerController : MonoBehaviour {
             transform.position = hopEndPosition;
             isHopping = false;
         }
+    }
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("Car")) {
+            Die();
+        }
+    }
+    void Die() {
+        isDead = true;
+
+        // Make the pidgeon fall sideways
+        transform.Rotate(0, 0, 90);
+        deathScreen.SetActive(true);
+
     }
 }
