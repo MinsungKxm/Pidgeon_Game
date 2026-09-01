@@ -3,25 +3,25 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
     public float hopDistance = 1.0f;
+    public float hopHeight = 0.5f;
+    public float hopDuration = 0.25f;
 
-    // How many degrees the pigeon rotates per second
     public float turnSpeed = 360.0f;
 
     public InputAction MoveAction;
     public Vector2 moveInput;
-
     public Vector2 previousInput;
 
-    // The Y rotation we want to eventually reach
     private float targetRotation;
-
-    // Whether the pigeon is currently turning
     private bool isRotating = false;
+
+    private bool isHopping = false;
+    private Vector3 hopStartPosition;
+    private Vector3 hopEndPosition;
+    private float hopTimer = 0.0f;
 
     void Start() {
         MoveAction.Enable();
-
-        // Start with the pigeon's current rotation
         targetRotation = transform.eulerAngles.y;
     }
 
@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour {
         moveInput = MoveAction.ReadValue<Vector2>();
 
         // W was just pressed
-        if (moveInput.y > 0 && previousInput.y <= 0) {
-            transform.Translate(Vector3.forward * hopDistance);
+        if (moveInput.y > 0 && previousInput.y <= 0 && !isHopping) {
+            StartHop();
         }
 
         // D was just pressed
@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour {
             isRotating = true;
         }
 
-        // If we're currently turning
         if (isRotating) {
             float newRotation = Mathf.MoveTowardsAngle(
                 transform.eulerAngles.y,
@@ -55,12 +54,51 @@ public class PlayerController : MonoBehaviour {
 
             transform.rotation = Quaternion.Euler(0, newRotation, 0);
 
-            // Check whether we've finished the 90-degree turn
-            if (Mathf.Approximately(newRotation, targetRotation)) {
+            if (Mathf.Abs(Mathf.DeltaAngle(newRotation, targetRotation)) < 0.01f) {
                 isRotating = false;
             }
         }
 
+        if (isHopping) {
+            UpdateHop();
+        }
+
         previousInput = moveInput;
+    }
+
+    void StartHop() {
+        isHopping = true;
+        hopTimer = 0.0f;
+
+        hopStartPosition = transform.position;
+
+        hopEndPosition =
+            hopStartPosition +
+            transform.forward * hopDistance;
+    }
+
+    void UpdateHop() {
+        hopTimer += Time.deltaTime;
+
+        float t = hopTimer / hopDuration;
+
+        // Move forward
+        Vector3 position = Vector3.Lerp(
+            hopStartPosition,
+            hopEndPosition,
+            t
+        );
+
+        // Move upward, then downward
+        float height = Mathf.Sin(t * Mathf.PI) * hopHeight;
+
+        position.y += height;
+
+        transform.position = position;
+
+        if (t >= 1.0f) {
+            transform.position = hopEndPosition;
+            isHopping = false;
+        }
     }
 }
