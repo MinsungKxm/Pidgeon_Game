@@ -7099,6 +7099,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4618933953056581451, guid: 88434706d6ff5e243868b378b33cd8b1, type: 3}
   m_PrefabInstance: {fileID: 536491852}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &539445471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6419671262868507204, guid: 0364cb90f8382f840bcbb80c4970ccae, type: 3}
+  m_PrefabInstance: {fileID: 1897438411240501435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &544977905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12029,10 +12034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 45512221cc3999d4ebd5a3d2c6027b97, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 963194228}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45512221cc3999d4ebd5a3d2c6027b97, type: 3}
       insertIndex: -1
@@ -13180,6 +13182,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13226,7 +13229,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.05
+  near clip plane: 0
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -13255,11 +13258,11 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.12714134, y: -0.36862397, z: 0.0509696, w: 0.9194311}
-  m_LocalPosition: {x: 2.276281, y: 1.8869901, z: -2.4760356}
-  m_LocalScale: {x: 0.464547, y: 0.46454698, z: 0.464547}
+  m_LocalPosition: {x: 47.33, y: 4.86, z: -4.725}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1461046400}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 25.252, y: -183.825, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -13305,6 +13308,59 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed2393c2d902744eb0d7709cc744a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraView
+  player: {fileID: 1461046400}
+  cameraAction:
+    m_Name: Camera
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e664e32a-6446-446e-9a52-fcb6d5e65384
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: e6693315-c1c8-4248-ac75-e560ba012f1d
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Camera
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: bc21e093-52c5-4ed0-a519-4190b58f0dad
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Camera
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 1a02512a-767a-4af0-9957-ea957f0f5e9c
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Camera
+      m_Flags: 8
+    m_Flags: 0
+    m_Priority: 0
+  rotationSpeed: 360
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  cameraRadius: 0.5
+  collisionBuffer: 0.3
 --- !u!1 &970697375 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1280414521145918320, guid: c46b09b837db5d546890e409caf769e6, type: 3}
@@ -29891,6 +29947,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1280414521145918320, guid: c46b09b837db5d546890e409caf769e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 395362695707711385}
+    - targetCorrespondingSourceObject: {fileID: 1280414521145918320, guid: c46b09b837db5d546890e409caf769e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 395362695707711388}
   m_SourcePrefab: {fileID: 100100000, guid: c46b09b837db5d546890e409caf769e6, type: 3}
 --- !u!4 &395362695707711382 stripped
 Transform:
@@ -29918,6 +29977,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5201497, y: 2.749558, z: 5.8482723}
   m_Center: {x: 0.000005722046, y: 1.374779, z: 0.0000019073486}
+--- !u!114 &395362695707711388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970697375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e7dd5daaa022f4698c303409150421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarMovement
+  speed: 4
 --- !u!1001 &518769834614097636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31315,13 +31387,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6419671262868507204, guid: 0364cb90f8382f840bcbb80c4970ccae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1897438411240501439}
+    - targetCorrespondingSourceObject: {fileID: 6419671262868507204, guid: 0364cb90f8382f840bcbb80c4970ccae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1897438411240501440}
   m_SourcePrefab: {fileID: 100100000, guid: 0364cb90f8382f840bcbb80c4970ccae, type: 3}
 --- !u!4 &1897438411240501436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5934778579920343294, guid: 0364cb90f8382f840bcbb80c4970ccae, type: 3}
   m_PrefabInstance: {fileID: 1897438411240501435}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1897438411240501439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539445471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e7dd5daaa022f4698c303409150421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarMovement
+  speed: 4
+--- !u!65 &1897438411240501440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539445471}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.520149, y: 2.749558, z: 5.848271}
+  m_Center: {x: 0, y: 1.374779, z: 0}
 --- !u!1001 &2089798289990194927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32045,6 +32157,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6535629527075169941, guid: b657a93bfb7890a4fa57df6180dc08cb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3015545935017686533}
+    - targetCorrespondingSourceObject: {fileID: 6535629527075169941, guid: b657a93bfb7890a4fa57df6180dc08cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3015545935017686536}
   m_SourcePrefab: {fileID: 100100000, guid: b657a93bfb7890a4fa57df6180dc08cb, type: 3}
 --- !u!4 &3015545935017686530 stripped
 Transform:
@@ -32072,6 +32187,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5201497, y: 2.749558, z: 5.8482723}
   m_Center: {x: -0.00000834465, y: 1.374779, z: -0.0000076293945}
+--- !u!114 &3015545935017686536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186068402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e7dd5daaa022f4698c303409150421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarMovement
+  speed: 4
 --- !u!1001 &3171867698515513357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36707,3 +36835,4 @@ SceneRoots:
   - {fileID: 2056894276}
   - {fileID: 1694799144}
   - {fileID: 982040149}
+  - {fileID: 963194228}
