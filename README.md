@@ -5,7 +5,7 @@ Pidgeon Crossing is a low-poly adventure and exploration game in which you play 
 ## Play or Download
 
 - [Download Pidgeon Crossing for Windows on itch.io](https://minsungkim.itch.io/pidgeon-crossing)
-- [Play the game in your browser on Unity Play](YOUR_UNITY_PLAY_LINK_HERE)
+- [Play the game in your browser on Unity Play](https://play.unity.com/en/games/2808f661-6a5c-4b7d-a214-b22351dc9af8/pidgeon-crossing)
 
 Replace the Unity Play placeholder above with the public game link after publishing the WebGL version.
 
